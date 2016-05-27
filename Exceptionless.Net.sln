@@ -103,7 +103,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptionless.SampleMvc", "
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Exceptionless.Portable.Signed", "src\Exceptionless.Portable.Signed\Exceptionless.Portable.Signed.xproj", "{A11A5A6D-C424-4DAA-BE22-B88EB984793A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Exceptionless.NetCore", "Exceptionless.NetCore\Exceptionless.NetCore.xproj", "{3C44C07A-CAC8-4625-9BE4-B593236A4373}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Exceptionless.NetCore", "src\Platforms\Exceptionless.NetCore\Exceptionless.NetCore.xproj", "{3C44C07A-CAC8-4625-9BE4-B593236A4373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
