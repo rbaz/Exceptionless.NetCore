@@ -14,6 +14,7 @@ $client_projects = @(
     @{ Name = "Exceptionless.Mvc";  			SourceDir = "$source_dir\Platforms\Exceptionless.Mvc"; 		        ExternalNuGetDependencies = $null; },
     @{ Name = "Exceptionless.Mvc.Signed";  		SourceDir = "$source_dir\Platforms\Exceptionless.Mvc.Signed"; 		ExternalNuGetDependencies = $null; },
     @{ Name = "Exceptionless.Nancy";  			SourceDir = "$source_dir\Platforms\Exceptionless.Nancy"; 	        ExternalNuGetDependencies = $null; },
+	@{ Name = "Exceptionless.Nancy.Signet";  			SourceDir = "$source_dir\Platforms\Exceptionless.Nancy.Signet"; 	        ExternalNuGetDependencies = $null; },
     @{ Name = "Exceptionless.WebApi";  			SourceDir = "$source_dir\Platforms\Exceptionless.WebApi"; 	        ExternalNuGetDependencies = $null; },
     @{ Name = "Exceptionless.WebApi.Signed";  	SourceDir = "$source_dir\Platforms\Exceptionless.WebApi.Signed"; 	ExternalNuGetDependencies = $null; },
     @{ Name = "Exceptionless.Web"; 				SourceDir = "$source_dir\Platforms\Exceptionless.Web"; 		        ExternalNuGetDependencies = $null; },
@@ -28,9 +29,13 @@ $client_projects = @(
     @{ Name = "Exceptionless.NLog.Signed"; 		SourceDir = "$source_dir\Platforms\Exceptionless.NLog.Signed";		ExternalNuGetDependencies = "NLog"; }
     @{ Name = "Exceptionless.Log4net"; 			SourceDir = "$source_dir\Platforms\Exceptionless.Log4net";	        ExternalNuGetDependencies = "log4net"; }
     @{ Name = "Exceptionless.Log4net.Signed"; 	SourceDir = "$source_dir\Platforms\Exceptionless.Log4net.Signed";	ExternalNuGetDependencies = "log4net"; }
+	@{ Name = "Exceptionless.NetCore"; 	SourceDir = "$source_dir\Platforms\Exceptionless.NetCore";	ExternalNuGetDependencies = "NetCore"; }
+	@{ Name = "Exceptionless.NetCore.Signed"; 	SourceDir = "$source_dir\Platforms\Exceptionless.NetCore.Signed";	ExternalNuGetDependencies = "NetCore"; }
+	
 )
 
 $client_build_configurations = @(
     @{ Constants = "NET40"; TargetFrameworkVersionProperty="NET40";	NuGetDir = "net40"; },
-    @{ Constants = "NET45"; TargetFrameworkVersionProperty="NET45";	NuGetDir = "net45"; }
+    @{ Constants = "NET45"; TargetFrameworkVersionProperty="NET45";	NuGetDir = "net45"; },
+	@{ Constants = "NETSTANDARD15"; TargetFrameworkVersionProperty="NETSTANDARD15";	NuGetDir = "netstandard15"; }
 )
