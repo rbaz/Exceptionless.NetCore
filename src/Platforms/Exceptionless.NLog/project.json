@@ -35,9 +35,14 @@
         "NLog": "4.3.3"
     },
     "frameworks": {
+        "net40": {
+            "buildOptions": {
+                "define": [ "EMBEDDED", "NET40" ]
+            }
+        },
         "net45": {
             "buildOptions": {
-                "define": [ "NET45" ]
+                "define": [ "EMBEDDED", "NET45" ]
             }
         }
     }

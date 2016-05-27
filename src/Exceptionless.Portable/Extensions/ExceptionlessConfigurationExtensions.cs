@@ -158,22 +158,19 @@ namespace Exceptionless {
             if (config == null)
                 throw new ArgumentNullException("config");
 
-            if (assemblies == null) {
-                assemblies = new List<Assembly> {
-#if !NETSTANDARD1_2
-                    Assembly.GetCallingAssembly()
-#endif
-                };
-            }
+            if (assemblies == null)
+                assemblies = new List<Assembly> { Assembly.GetCallingAssembly() };
 
             assemblies = assemblies.Where(a => a != null).Distinct().ToList();
 
             try {
                 foreach (var assembly in assemblies) {
-                    var attr = assembly.GetCustomAttributes(typeof(ExceptionlessAttribute)).FirstOrDefault() as ExceptionlessAttribute;
-                    if (attr == null)
+                    object[] attributes = assembly.GetCustomAttributes(typeof(ExceptionlessAttribute), false);
+                    if (attributes.Length <= 0 || !(attributes[0] is ExceptionlessAttribute))
                         continue;
-                    
+
+                    var attr = attributes[0] as ExceptionlessAttribute;
+
                     if (!attr.Enabled)
                         config.Enabled = false;
 
@@ -186,7 +183,7 @@ namespace Exceptionless {
                 }
 
                 foreach (var assembly in assemblies) {
-                    var attributes = assembly.GetCustomAttributes(typeof(ExceptionlessSettingAttribute));
+                    object[] attributes = assembly.GetCustomAttributes(typeof(ExceptionlessSettingAttribute), false);
                     foreach (ExceptionlessSettingAttribute attribute in attributes.OfType<ExceptionlessSettingAttribute>()) {
                         if (!String.IsNullOrEmpty(attribute.Name))
                             config.Settings[attribute.Name] = attribute.Value;

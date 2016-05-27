@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
 using Exceptionless.Dependency;
 using Exceptionless.Plugins;
 using Exceptionless.Plugins.Default;
@@ -387,7 +386,7 @@ namespace Exceptionless {
                 return 0;
 
             try {
-                var priorityAttribute = type.GetTypeInfo().GetCustomAttributes(typeof(PriorityAttribute), true).FirstOrDefault() as PriorityAttribute;
+                var priorityAttribute = type.GetCustomAttributes(typeof(PriorityAttribute), true).FirstOrDefault() as PriorityAttribute;
                 return priorityAttribute != null ? priorityAttribute.Priority : 0;
             } catch (Exception ex) {
                 Resolver.GetLog().Error(typeof(ExceptionlessConfiguration), ex, "An error occurred while getting the priority for type: " + type.FullName);

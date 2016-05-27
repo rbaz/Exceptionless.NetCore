@@ -72,7 +72,7 @@
       <HintPath>..\..\Exceptionless.Portable\bin\$(Configuration)\$(TargetFrameworkVersionProperty)\Exceptionless.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Exceptionless.Web">
-      <HintPath>..\..\Exceptionless.Web\bin\$(Configuration)\$(TargetFrameworkVersionProperty)\Exceptionless.Web.dll</HintPath>
+      <HintPath>..\..\Platforms\Exceptionless.Web\bin\Debug\net40\Exceptionless.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +88,12 @@
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Platforms\Exceptionless.Nancy\Exceptionless.Nancy.xproj">
+      <Project>{76cc2f27-1b94-4375-a082-a167cfc5e6cb}</Project>
+      <Name>Exceptionless.Nancy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

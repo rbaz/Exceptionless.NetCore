@@ -41,9 +41,17 @@
         }
     },
     "frameworks": {
+        "net40": {
+            "buildOptions": {
+                "define": [ "EMBEDDED", "NET40" ]
+            },
+            "frameworkAssemblies": {
+                "System.Configuration": ""
+            }
+        },
         "net45": {
             "buildOptions": {
-                "define": [ "NET45" ]
+                "define": [ "EMBEDDED", "NET45" ]
             },
             "frameworkAssemblies": {
                 "System.Configuration": ""

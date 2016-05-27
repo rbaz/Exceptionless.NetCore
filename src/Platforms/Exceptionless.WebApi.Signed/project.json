@@ -53,7 +53,7 @@
     "frameworks": {
         "net45": {
             "buildOptions": {
-                "define": [ "SIGNED", "NET45" ]
+                "define": [ "EMBEDDED", "SIGNED", "NET45" ]
             },
             "frameworkAssemblies": {
                 "System.Configuration": "",

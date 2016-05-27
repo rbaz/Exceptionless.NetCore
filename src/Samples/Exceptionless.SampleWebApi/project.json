@@ -19,7 +19,7 @@
     "frameworks": {
         "net45": {
             "buildOptions": {
-                "define": [ "NET45" ]
+                "define": [ "EMBEDDED", "NET45" ]
             }
         }
     }

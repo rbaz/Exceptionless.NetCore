@@ -24,11 +24,11 @@ namespace Exceptionless.Serializer {
 
         protected override JsonDictionaryContract CreateDictionaryContract(Type objectType) {
             JsonDictionaryContract contract = base.CreateDictionaryContract(objectType);
-            contract.DictionaryKeyResolver = propertyName => propertyName;
+            contract.PropertyNameResolver = propertyName => propertyName;
             return contract;
         }
 
-        protected override string ResolvePropertyName(string propertyName) {
+        protected internal override string ResolvePropertyName(string propertyName) {
             return propertyName.ToLowerUnderscoredWords();
         }
     }
